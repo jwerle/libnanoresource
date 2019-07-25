@@ -49,6 +49,10 @@ typedef void (nanoresource_inactive_callback_t)(
   int err,
   void *value);
 
+typedef void (nanoresource_user_callback_t)(
+  struct nanoresource_s *resource,
+  int err);
+
 /**
  */
 #define NANORESOURCE_OPTIONS_FIELDS              \

@@ -274,9 +274,8 @@ nanoresource_request_callback(
       break;
 
     case NANORESOURCE_REQUEST_USER:
-      resource->destroying = 0;
       if (0 != done) {
-        ((nanoresource_destroy_callback_t *)done)(resource, err);
+        ((nanoresource_user_callback_t *)done)(resource, err);
       }
       break;
   }

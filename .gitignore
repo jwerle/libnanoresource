@@ -54,3 +54,4 @@ dkms.conf
 build/
 test/test
 example/ram
+example/filewatcher
