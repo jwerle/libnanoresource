@@ -1,6 +1,6 @@
 {
   "name": "nanoresource",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "clib": true,
   "description": "A C99 library for creating tiny async resources.",
   "directories": {
