@@ -198,6 +198,15 @@ nanoresource_queue_push(
 int
 nanoresource_active(struct nanoresource_s *resource) {
   require(resource, EFAULT);
+
+  if (1 == resource->closing) {
+    return EAGAIN;
+  }
+
+  if (1 == resource->closed) {
+    return ENOLCK;
+  }
+
   resource->actives++;
   return 0;
 }
