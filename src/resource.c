@@ -15,7 +15,7 @@ queue_and_run(
   if (0 == resource->pending) {
     return - nanoresource_request_run(request);
   } else {
-    return - (int) request->err;
+    return - request->err;
   }
 }
 
@@ -99,20 +99,6 @@ nanoresource_open(
 ) {
   require(resource, EFAULT);
 
-  if (1 == resource->opened && 0 == resource->needs_open) {
-    if (0 != callback) {
-      callback(resource, 0);
-    }
-
-    return 0;
-  } else if (1 == resource->closed || 1 == resource->closing) {
-    if (0 != callback) {
-      callback(resource, EPERM);
-    }
-
-    return 1;
-  }
-
   struct nanoresource_request_s *request = nanoresource_request_new(
     (struct nanoresource_request_options_s) {
       .callback = callback,
@@ -131,14 +117,6 @@ nanoresource_close(
   nanoresource_close_callback_t *callback
 ) {
   require(resource, EFAULT);
-
-  if (1 == resource->closed || 1 == resource->closing) {
-    if (0 != callback) {
-      callback(resource, 0);
-    }
-
-    return 0;
-  }
 
   struct nanoresource_request_s *request = nanoresource_request_new(
     (struct nanoresource_request_options_s) {

@@ -18,7 +18,7 @@ typedef struct thread_context_s thread_context_t;
 typedef struct watch_context_s watch_context_t;
 
 typedef void *(pthread_start_routine_t)(void *);
-typedef void (watch_callback_t)(void *);
+typedef void (watch_callback_t)(nanoresource_t *resource, int err);
 typedef void (watch_change_callback_t)(
   nanoresource_t *resource,
   const char *filename,
