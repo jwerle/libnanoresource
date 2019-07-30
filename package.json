@@ -1,5 +1,5 @@
 {
-  "name": "nanoresource",
+  "name": "@jwerle/libnanoresource",
   "version": "0.1.2",
   "clib": true,
   "description": "A C99 library for creating tiny async resources.",
@@ -7,26 +7,8 @@
     "example": "example",
     "test": "test"
   },
-  "repo": "jwerle/libnanoresource",
-  "src": [
-    "include/nanoresource/allocator.h",
-    "include/nanoresource/platform.h",
-    "include/nanoresource/request.h",
-    "include/nanoresource/resource.h",
-    "include/nanoresource/version.h",
-    "include/nanoresource/nanoresource.h",
-    "src/allocator.c",
-    "src/request.c",
-    "src/require.h",
-    "src/resource.c",
-    "src/version.c",
-    "mk/brief.mk",
-    "Makefile.in",
-    "configure",
-    "README.md",
-    "LICENSE"
-  ],
   "scripts": {
+    "version": "./scripts/update-clib-json && git add clib.json",
     "test": "make test"
   },
   "repository": {

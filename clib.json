@@ -1,0 +1,29 @@
+{
+  "name": "nanoresource",
+  "version": "0.1.2",
+  "author": "Joseph Werle <joseph.werle@gmail.com>",
+  "license": "MIT",
+  "description": "A C99 library for creating tiny async resources.",
+  "repo": "jwerle/libnanoresource",
+  "src": [
+    "include/nanoresource/allocator.h",
+    "include/nanoresource/platform.h",
+    "include/nanoresource/request.h",
+    "include/nanoresource/resource.h",
+    "include/nanoresource/version.h",
+    "include/nanoresource/nanoresource.h",
+    "src/allocator.c",
+    "src/request.c",
+    "src/require.h",
+    "src/resource.c",
+    "src/version.c",
+    "mk/brief.mk",
+    "Makefile.in",
+    "configure",
+    "README.md",
+    "LICENSE"
+  ],
+  "development": {
+    "jwerle/libok": "0.3.0"
+  }
+}
